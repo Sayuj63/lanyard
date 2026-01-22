@@ -101,11 +101,137 @@ const categoryScrollData = [
   { id: 'cat-8', name: 'Trade Show & Events', image: '/images/categories/trade-show.png', link: '/products/trade-show' },
 ];
 
+const mockCategories = [
+  {
+    id: 'cat-1',
+    name: 'Lanyards',
+    image: '/images/categories/lanyards.jpg',
+    startingPrice: 0.89,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/lanyards'
+  },
+  {
+    id: 'cat-2',
+    name: 'ID Cards',
+    image: '/images/categories/id-cards.jpg',
+    startingPrice: 0.45,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/id-cards'
+  },
+  {
+    id: 'cat-3',
+    name: 'Wristbands',
+    image: '/images/categories/wristbands.jpg',
+    startingPrice: 0.35,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/wristbands'
+  },
+  {
+    id: 'cat-4',
+    name: 'Can Coolers',
+    image: '/images/categories/cooler.jpg',
+    startingPrice: 1.25,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/can-coolers'
+  },
+  {
+    id: 'cat-5',
+    name: 'Patches',
+    image: '/images/categories/patches.jpg',
+    startingPrice: 1.89,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/patches'
+  },
+  {
+    id: 'cat-6',
+    name: 'Tote Bags',
+    image: '/images/categories/tote-bags.jpg',
+    startingPrice: 2.45,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/tote-bags'
+  },
+  {
+    id: 'cat-7',
+    name: 'Lapel Pins',
+    image: '/images/categories/lapel-pins.jpg',
+    startingPrice: 1.15,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/lapel-pins'
+  },
+  {
+    id: 'cat-8',
+    name: 'Accessories',
+    image: '/images/categories/accessories.jpg',
+    startingPrice: 0.35,
+    features: ['Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/accessories'
+  },
+  {
+    id: 'cat-9',
+    name: 'Event Kits',
+    image: '/images/categories/event-kits.jpg',
+    startingPrice: 4.99,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/event-kits'
+  },
+  {
+    id: 'cat-10',
+    name: 'Branding Suite',
+    image: '/images/categories/branding-suite.jpg',
+    startingPrice: 9.99,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/branding-suite'
+  },
+  {
+    id: 'cat-11',
+    name: 'Trade Show',
+    image: '/images/categories/trade-show.jpg',
+    startingPrice: 2.50,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/trade-show'
+  },
+  {
+    id: 'cat-12',
+    name: 'Corporate',
+    image: '/images/categories/corporate.jpg',
+    startingPrice: 1.25,
+    features: ['Custom Printing', 'Bulk Discounts'],
+    ctaText: 'VIEW PRODUCTS',
+    ctaLink: '/products/corporate'
+  }
+];
+
 export default function Home() {
+
+  const menuCategories = [
+    { id: 'all-products', name: 'All Products', hasDropdown: true },
+    { id: 'lanyards', name: 'Lanyards', hasDropdown: true },
+    { id: 'id-cards', name: 'ID Cards', hasDropdown: true },
+    { id: 'wristbands', name: 'Wristbands', hasDropdown: true },
+    { id: 'can-coolers', name: 'Can Coolers', hasDropdown: true },
+    { id: 'patches', name: 'Patches', hasDropdown: true },
+    { id: 'tote-bags', name: 'Tote Bags', hasDropdown: true },
+    { id: 'lapel-pins', name: 'Lapel Pins', hasDropdown: true },
+    { id: 'trade-show', name: 'Trade Show & Events', hasDropdown: true },
+    { id: 'bulk-orders', name: 'Bulk Orders', hasDropdown: false },
+    { id: 'request-quote', name: 'Request Quote', hasDropdown: false },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Top Navigation Section - Fixed positioning */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white">
+      {/* Top Navigation Section */}
+      <header>
         {/* Notification Bar */}
         <NotificationBar
           message={NOTIFICATION_MESSAGE}
@@ -113,19 +239,19 @@ export default function Home() {
           textColor="text-ln-yellow"
         />
 
-        {/* Main Header - with top padding to account for notification bar */}
-        <div style={{ paddingTop: '40px' }}>
-          <MainHeader
-            logoText={COMPANY_INFO.NAME}
-            searchPlaceholder="Search 1000+ Products, Styles, SKUs..."
-            cartItemCount={0}
-            phoneNumber={COMPANY_INFO.PHONE_DISPLAY}
-          />
-        </div>
-      </div>
+        {/* Main Header */}
+        <MainHeader
+          logoText={COMPANY_INFO.NAME}
+          searchPlaceholder="Search 1000+ Products, Styles, SKUs..."
+          cartItemCount={0}
+          phoneNumber={COMPANY_INFO.PHONE_DISPLAY}
+        />
 
-      {/* Spacer to prevent content from going under fixed header */}
-      <div style={{ height: '120px' }}></div>
+        {/* Mega Menu */}
+        <MegaMenuWrapper
+          categories={menuCategories}
+        />
+      </header>
 
       {/* Main Content */}
       <main className="flex-grow">
