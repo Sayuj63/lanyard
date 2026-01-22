@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for B2B e-commerce design */
+@layer base {
+  html {
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-container mx-auto px-4;
+  }
+  
+  .btn-primary {
+    @apply bg-ln-red text-white px-6 py-3 font-bold rounded-sm hover:bg-red-700 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-ln-blue text-white px-6 py-3 font-bold rounded-sm hover:bg-blue-700 transition-colors;
+  }
+  
+  .card-product {
+    @apply bg-white border border-border-gray rounded-sm p-4 hover:shadow-md transition-shadow;
+  }
+}
