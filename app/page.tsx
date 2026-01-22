@@ -6,6 +6,7 @@ import TrustSection from '@/components/trust/TrustSection';
 import FeaturedProducts from '@/components/products/FeaturedProducts';
 import BulkCalculator from '@/components/products/BulkCalculator';
 import Testimonials from '@/components/trust/Testimonials';
+import ProductGrid from '@/components/products/ProductGrid';
 import MegaFooter from '@/components/footer/MegaFooter';
 import {
   HERO_SLIDES,
@@ -138,6 +139,9 @@ export default function Home() {
 
         {/* Category Scroll - Zepto Style */}
         <CategoryScroll categories={categoryScrollData} />
+
+        {/* Product Grid - Traditional E-commerce Style */}
+        <ProductGrid />
 
         {/* Trust Section */}
         <TrustSection />

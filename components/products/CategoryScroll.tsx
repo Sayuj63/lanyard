@@ -24,7 +24,7 @@ const CategoryScroll: React.FC<CategoryScrollProps> = ({ categories }) => {
 
                 {/* Horizontal scrollable container */}
                 <div className="overflow-x-auto scrollbar-hide">
-                    <div className="flex gap-6 pb-4">
+                    <div className="flex gap-6 pb-4 justify-center">
                         {categories.map((category) => (
                             <a
                                 key={category.id}
